@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Product | aWebZone</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Inter&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="product-details.css" />
+</head>
+<body>
+
+  <section class="product-page">
+
+    <!-- TITLE -->
+    <h1 class="product-title">Best Collections</h1>
+
+    <!-- IMAGE CAROUSEL -->
+    <div class="carousel-container">
+
+      <input type="radio" name="slider" id="item-1" checked>
+      <input type="radio" name="slider" id="item-2">
+      <input type="radio" name="slider" id="item-3">
+      <input type="radio" name="slider" id="item-4">
+      <input type="radio" name="slider" id="item-5">
+
+      <div class="cards">
+        <label class="card" for="item-1" id="img-1">
+          <img src="image copy 7.png">
+        </label>
+
+        <label class="card" for="item-2" id="img-2">
+          <img src="image copy 8.png">
+        </label>
+
+        <label class="card" for="item-3" id="img-3">
+          <img src="image copy 9.png">
+        </label>
+
+        <label class="card" for="item-4" id="img-4">
+          <img src="image copy 10.png">
+        </label>
+
+        <label class="card" for="item-5" id="img-5">
+          <img src="image copy 6.png" alt="Classic Roast Coffee">
+        </label>
+      </div>
+
+    </div>
+
+    <!-- PRODUCT INFO -->
+    <div class="product-info">
+      <div class="info-box">
+        <p><strong id="productName">Iced Favorites Coffee</strong></p>
+        <p id="productPrice">Price: 150₹</p>
+        <p id="productDesc">Description: Enter into the world of caffeine and taste the magic</p>
+      </div>
+
+      <div class="actions">
+        <div class="btn-stack">
+          <button class="btn primary" onclick="location.href='payment.html'">$ Buy now</button>
+          <button class="btn secondary" id="addToCartBtn">Add to cart</button>
+        </div>
+        <a href="cart.html" class="cart-link">View my cart</a>
+      </div>
+    </div>
+
+  </section>
+
+  <script src="product-details.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

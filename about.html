@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>aWebZone Cafe | About</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+  --brown:#7a4a2e;
+  --brown-dark:#4a2a1a;
+  --cream:#f2e2c8;
+  --card:#e3a27c;
+}
+
+/* PAGE */
+
+body{
+  margin:0;
+  font-family:"Inter",sans-serif;
+  background:var(--cream);
+  color:var(--brown-dark);
+}
+
+/* NAVBAR */
+
+.top-nav{
+  width:calc(100% - 60px);
+  margin:20px auto;
+  height:70px;
+  background:rgba(122,74,46,.92);
+  border-radius:50px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 30px;
+  color:white;
+  box-shadow:0 6px 12px rgba(0,0,0,.2);
+}
+
+.brand{
+  font-family:"Cinzel",serif;
+  font-size:1.7rem;
+}
+
+.links{
+  display:flex;
+  gap:24px;
+  align-items:center;
+}
+
+.links a{
+  color:white;
+  text-decoration:none;
+  font-weight:500;
+}
+
+.login-btn{
+  background:#5a2f18;
+  padding:8px 16px;
+  border-radius:999px;
+}
+
+/* FRAME WITH BACKGROUND */
+
+.frame{
+  width:92%;
+  max-width:900px;
+  margin:20px auto 60px;
+  padding:30px;
+  border:4px solid #2b2b2b;
+  background:
+    url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085")
+    center/cover no-repeat;
+  box-sizing:border-box;
+  position:relative;
+}
+
+/* ABOUT */
+
+.about-box{
+  background:var(--card);
+  padding:22px 26px;
+  border:2px solid #6f3b23;
+  box-shadow:0 4px 8px rgba(0,0,0,.25);
+  margin-bottom:26px;
+}
+
+.about-box h2{
+  font-family:"Cinzel",serif;
+  margin:0 0 10px;
+  font-size:1.9rem;
+}
+
+/* CONTACT */
+
+.contact-box{
+  background:var(--card);
+  border-radius:28px;
+  padding:26px;
+  border:2px solid #6f3b23;
+  box-shadow:0 6px 12px rgba(0,0,0,.25);
+}
+
+.contact-box h2{
+  font-family:"Cinzel",serif;
+  margin-top:0;
+  font-size:2rem;
+}
+
+/* INPUTS */
+
+.input-row{
+  display:flex;
+  gap:28px;
+  margin-bottom:18px;
+  align-items:center;
+}
+
+.input-row input{
+  width:150px;
+  padding:6px 10px;
+  border-radius:20px;
+  border:none;
+  outline:none;
+  background:#e8dbc8;
+  box-shadow: inset 0 2px 3px rgba(0,0,0,.25);
+}
+
+/* RATING STARS */
+
+.rating{
+  margin:8px 0 14px;
+}
+
+.rating span{
+  font-size:1.8rem;
+  cursor:pointer;
+  color:#c5b8a7;
+  transition:color .2s;
+}
+
+.rating span.active{
+  color:#ff7b00;
+}
+
+/* FEEDBACK */
+
+textarea{
+  width:100%;
+  height:90px;
+  border-radius:20px;
+  border:none;
+  padding:12px;
+  resize:none;
+  background:#e8dbc8;
+  box-shadow: inset 0 2px 3px rgba(0,0,0,.25);
+  font-family:inherit;
+}
+
+/* SUBMIT */
+
+.submit-btn{
+  position:absolute;
+  bottom:16px;
+  right:20px;
+  padding:6px 16px;
+  border-radius:999px;
+  border:none;
+  background:#e8dbc8;
+  font-weight:600;
+  cursor:pointer;
+}
+
+.submit-btn:hover{
+  background:white;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+  .input-row{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<header class="top-nav">
+  <div class="brand">aWebZone Cafe</div>
+
+  <nav class="links">
+    <a href="index.html">Home</a>
+    <a href="auth.html" class="login-btn">Login / Signup</a>
+  </nav>
+</header>
+
+<!-- MAIN FRAME -->
+
+<div class="frame">
+
+  <!-- ABOUT -->
+
+  <div class="about-box">
+    <h2>About Us</h2>
+    <p>
+      Welcome to a place where every cup tells a story. At our coffee shop,
+      we believe coffee is more than a drink — it's a moment of comfort,
+      connection, and creativity.
+    </p>
+  </div>
+
+  <!-- CONTACT -->
+
+  <div class="contact-box">
+
+    <h2>Contact Us</h2>
+
+    <div class="input-row">
+      Phno: <input type="text">
+      Mail: <input type="text">
+    </div>
+
+    <div>
+      Share us your Experience
+    </div>
+
+    <!-- CLICKABLE STARS -->
+
+    <div class="rating">
+      <span data-value="1">★</span>
+      <span data-value="2">★</span>
+      <span data-value="3">★</span>
+      <span data-value="4">★</span>
+      <span data-value="5">★</span>
+    </div>
+
+    <textarea placeholder="We value your Feedback !!!!"></textarea>
+
+  </div>
+
+  <button class="submit-btn">Submit</button>
+
+</div>
+
+<!-- STAR SCRIPT -->
+
+<script>
+const stars = document.querySelectorAll(".rating span");
+const submitBtn = document.querySelector(".submit-btn");
+
+stars.forEach((star, index) => {
+  star.addEventListener("click", () => {
+
+    stars.forEach((s, i) => {
+      if (i <= index) s.classList.add("active");
+      else s.classList.remove("active");
+    });
+
+  });
+});
+
+if (submitBtn) {
+  submitBtn.addEventListener("click", () => {
+    alert("Submitted");
+  });
+}
+</script>
+
+</body>
+</html>

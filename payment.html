@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>aWebZone | Payment</title>
+  <meta name="viewport" content="width=1200" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== PAGE BACKGROUND ===== */
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #d9c3ae, #f1e5d3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Inter", sans-serif;
+    }
+
+    /* ===== OUTER FRAME ===== */
+    .frame {
+      width: 92%;
+      max-width: 1200px;
+      padding: 24px;
+      border: 3px solid #6b3f26;
+      background: #efe5d3;
+    }
+
+    /* ===== INNER CONTENT ===== */
+    .payment-box {
+      position: relative;
+      padding: 32px 36px;
+      background:
+        radial-gradient(circle at 70% 20%, rgba(255,255,255,0.5), transparent 40%),
+        radial-gradient(circle at 20% 70%, rgba(255,255,255,0.4), transparent 45%),
+        #e8dcc7;
+      min-height: 520px;
+    }
+
+    /* ===== TITLE ===== */
+    .title {
+      font-family: "Cinzel", serif;
+      font-size: 2.4rem;
+      color: #5e3421;
+      margin-bottom: 36px;
+    }
+
+    .payment-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    /* ===== PAYMENT OPTIONS ===== */
+    .options {
+      width: 520px;
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+    }
+
+    .payment-illustration {
+      width: 450px;
+      height: 450px;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .payment-illustration img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .option {
+      background: #ffffff;
+      border-radius: 26px;
+      padding: 18px 26px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border: 2px solid #6b3f26;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+      cursor: pointer;
+    }
+
+    .left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+    .right {
+      font-weight: 600;
+      color: #333;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Left logos */
+    .logo {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.82rem;
+      font-weight: bold;
+      border: 1px solid rgba(0, 0, 0, 0.16);
+      overflow: hidden;
+    }
+
+    .logo.gpay {
+      background: conic-gradient(from 210deg, #34a853, #4285f4, #ea4335, #fbbc05, #34a853);
+      color: #fff;
+    }
+
+    .logo.phonepe {
+      background: #5f259f;
+      color: #fff;
+    }
+
+    .logo.card {
+      background: linear-gradient(135deg, #2a2a2a, #5a5a5a);
+      color: #fff;
+      font-size: 0.95rem;
+    }
+
+    .logo.bank {
+      background: linear-gradient(135deg, #8b5a3c, #5e3421);
+      color: #fff;
+      font-size: 0.95rem;
+    }
+
+    .right-badge {
+      min-width: 68px;
+      height: 30px;
+      padding: 0 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(107, 63, 38, 0.35);
+      background: #f6eee3;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #5e3421;
+      letter-spacing: 0.2px;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        align-items: flex-start;
+      }
+
+      .frame {
+        width: calc(100% - 24px);
+        margin: 12px;
+        padding: 14px;
+      }
+
+      .payment-box {
+        min-height: auto;
+        padding: 20px 14px;
+      }
+
+      .title {
+        font-size: 1.8rem;
+        margin-bottom: 18px;
+      }
+
+      .options {
+        width: 100%;
+        gap: 14px;
+      }
+
+      .payment-content {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+      }
+
+      .payment-illustration {
+        width: 100%;
+        max-width: 360px;
+        height: 360px;
+        margin: 0 auto;
+      }
+
+      .option {
+        padding: 14px;
+        border-radius: 16px;
+      }
+
+      .left {
+        font-size: 1rem;
+        gap: 10px;
+      }
+
+      .right-badge {
+        min-width: 56px;
+        height: 26px;
+        font-size: 0.8rem;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="frame">
+    <div class="payment-box">
+
+      <h1 class="title">Choose Your Payment Method</h1>
+
+      <div class="payment-content">
+        <div class="options">
+
+          <div class="option" onclick="location.href='gpay.html'">
+            <div class="left">
+              <div class="logo gpay">G</div>
+              <span>GPay</span>
+            </div>
+            <div class="right"><span class="right-badge">UPI</span></div>
+          </div>
+
+          <div class="option" onclick="location.href='phonepe.html'">
+            <div class="left">
+              <div class="logo phonepe">P</div>
+              <span>PhonePe</span>
+            </div>
+            <div class="right"><span class="right-badge">RuPay</span></div>
+          </div>
+
+          <div class="option" onclick="location.href='card-payment.html'">
+            <div class="left">
+              <div class="logo card">💳</div>
+              <span>Debit / Credit card</span>
+            </div>
+            <div class="right"><span class="right-badge">Card</span></div>
+          </div>
+
+          <div class="option" onclick="location.href='internet-banking.html'">
+            <div class="left">
+              <div class="logo bank">🏦</div>
+              <span>Internet Banking</span>
+            </div>
+            <div class="right"><span class="right-badge">Bank</span></div>
+          </div>
+
+        </div>
+
+        <div class="payment-illustration">
+          <img src="image copy 11.png" alt="Payment illustration">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1200" />
+  <title>aWebZone | Login</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@400;500;600;700&family=Lobster&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="auth-page">
+  <section class="auth-center">
+    <div class="panel panel-right signup-card">
+      <div class="auth-shell">
+        <button class="back-home-btn" type="button" onclick="location.href='index.html'">
+          Back to Home
+        </button>
+        <header class="auth-header">AWEBZONE</header>
+
+        <p class="welcome">Hello we are glad to see you!</p>
+        <h3>Login / Signup</h3>
+
+        <div class="social-row">
+          <button class="google-btn">G Continue with Google</button>
+          <button class="social-icon">F</button>
+          <button class="social-icon">T</button>
+        </div>
+
+        <span class="or-label">Or</span>
+
+        <form>
+          <div class="input-grid">
+            <input type="text" placeholder="Name" />
+            <input type="email" placeholder="Email" />
+            <input type="password" placeholder="Password" />
+            <input type="password" placeholder="Repeat Password" />
+          </div>
+
+          <div class="form-footer">
+            <label class="agree">
+              <input type="checkbox" />
+              <span>I agree with terms and conditions</span>
+            </label>
+
+            <button class="signup-btn" type="button" onclick="goToProducts()">
+              Sign up
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+  <script src="script.js"></script>
+  <script>
+    function goToProducts() {
+      window.location.href = "success.html";
+    }
+  </script>
+</body>
+</html>

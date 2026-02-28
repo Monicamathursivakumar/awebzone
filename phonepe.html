@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>aWebZone | PhonePe</title>
+  <meta name="viewport" content="width=1200" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #caa88d, #f1e3cf);
+      font-family: "Inter", sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .frame {
+      width: 92%;
+      max-width: 1200px;
+      border: 3px solid #5e3421;
+      background: #efe3cf;
+      padding: 16px;
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: #a56d49;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .left {
+      padding: 26px;
+      color: #fff;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+    }
+
+    .left h2 {
+      font-family: "Cinzel", serif;
+      font-size: 2rem;
+      margin: 0;
+    }
+
+    .method-box {
+      background: #fff;
+      color: #2f1b12;
+      border-radius: 12px;
+      padding: 28px 24px;
+      width: 82%;
+      max-width: 360px;
+      box-sizing: border-box;
+    }
+
+    .icon {
+      width: 70px;
+      height: 70px;
+      margin: 0 auto 14px;
+      border-radius: 50%;
+      background: #5f259f;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+
+    .method-box p {
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .right {
+      background: #f3e6d3;
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .right h2 {
+      font-family: "Cinzel", serif;
+      color: #5e3421;
+      font-size: 2rem;
+      margin: 0;
+    }
+
+    .box {
+      background: #fff;
+      border-radius: 10px;
+      min-height: 80px;
+      padding: 12px;
+    }
+
+    .total {
+      background: #fff;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-weight: 600;
+      width: fit-content;
+    }
+
+    .btn {
+      margin-top: auto;
+      background: #f4a66e;
+      border: none;
+      padding: 14px;
+      border-radius: 999px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      color: #4a2a1a;
+      box-shadow: 0 4px 0 #8f4f2c;
+    }
+
+    .btn-small {
+      width: fit-content;
+      min-width: 180px;
+      margin-top: 6px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      align-self: center;
+    }
+
+    .back {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      color: #4a2a1a;
+      text-decoration: underline;
+      width: fit-content;
+    }
+
+    @media (max-width: 900px) {
+      body {
+        align-items: flex-start;
+      }
+
+      .frame {
+        width: calc(100% - 24px);
+        margin: 12px;
+      }
+
+      .content {
+        grid-template-columns: 1fr;
+      }
+
+      .left,
+      .right {
+        padding: 18px;
+      }
+
+      .left h2,
+      .right h2 {
+        font-size: 1.6rem;
+      }
+
+      .method-box {
+        width: 100%;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .btn-small {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="frame">
+    <div class="content">
+      <div class="left">
+        <h2>PhonePe Payment</h2>
+        <div class="method-box">
+          <div class="icon">P</div>
+          <p>Complete this payment using your PhonePe app with RuPay support.</p>
+        </div>
+      </div>
+
+      <div class="right">
+        <h2>Payment Accepted here !</h2>
+
+        <div>
+          <p>Shipping Address :</p>
+          <div class="box" id="shippingAddressBox"></div>
+        </div>
+
+        <div class="total">TOTAL PRICE: 1234</div>
+
+        <button class="btn" onclick="location.href='products.html'">
+          Continue Shopping
+        </button>
+
+        <button class="btn btn-small" onclick="location.href='index.html'">
+          Logout
+        </button>
+
+        <button class="btn btn-small" onclick="location.href='about.html'">
+          Share Your Feedback
+        </button>
+
+        <div class="back" onclick="history.back()">Back</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const SHIPPING_ADDRESS_KEY = "awebzoneShippingAddress";
+    const shippingAddressBox = document.getElementById("shippingAddressBox");
+    const storedAddress = localStorage.getItem(SHIPPING_ADDRESS_KEY);
+
+    if (shippingAddressBox) {
+      shippingAddressBox.textContent = storedAddress && storedAddress.trim()
+        ? storedAddress
+        : "No address provided";
+    }
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
